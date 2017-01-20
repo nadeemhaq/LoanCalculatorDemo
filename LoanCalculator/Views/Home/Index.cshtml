@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Loan Calculator Demo";
+}
+
+<div class="jumbotron">
+    <h1>Loan Calculator Demo</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        @*<form class="form-horizontal">*@
+            @using (Html.BeginForm("About", "Home", FormMethod.Post, new { @area = "Admin", @role = "form", @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Loan Calculator</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="Principal">Loan Amount $</label>
+                        <div class="col-md-5">
+                            <input id="Principal" name="Principal" type="text" placeholder="200000" class="form-control input-md" required="">
+                            <span class="help-block">How much do you owe?</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="NumberOfPayments">Number of Payments</label>
+                        <div class="col-md-4">
+                            <input id="NumberOfPayments" name="NumberOfPayments" type="text" placeholder="360" class="form-control input-md" required="">
+                            <span class="help-block">How many months do you have to pay it off?</span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="InterestRate">Interest Rate</label>
+                        <div class="col-md-4">
+                            <input id="InterestRate" name="InterestRate" type="text" placeholder="0.04" class="form-control input-md" required="">
+                            <span class="help-block">What is the yearly interest rate?</span>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"></label>
+                        <div class="col-md-4">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Calculate</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            }
+        
+        @*</form>*@
+    </div>    
+</div>
